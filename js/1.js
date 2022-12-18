@@ -446,3 +446,39 @@
 
 // ===============================================================
  
+
+
+// const calculateTotalPrice = (quantity, pricePerItem) =>  quantity * pricePerItem;
+
+// const calculateTotalPrice = (orderedItems) => {
+//     let totalPrice = 0;
+  
+//     orderedItems.forEach( item => totalPrice += item){
+//         return totalPrice
+//     }
+//   console.log(totalPrice)
+//   }
+
+//   calculateTotalPrice([12, 85, 37, 4])
+
+// ===========================================================
+
+// const  filterArray = (numbers, value) => {
+//     const filteredNumbers = [];
+  
+//     numbers.forEach(number => 
+//     { if(number > value) {
+//             filteredNumbers.push(number)
+//           }
+//      })
+    
+
+//       console.log(filteredNumbers)
+  
+//     // Change code above this line
+//     return filteredNumbers;
+//   }
+//   filterArray([1, 2, 3, 4, 5], 3)
+
+// ==============================================
+
