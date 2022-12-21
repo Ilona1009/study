@@ -104,7 +104,7 @@
 //     // Change code below this line
   
 //     const newObject ={
-//       ...completed, 
+//       ...completed,
 //        category : "General",
 //        priority : "Normal",
 //     }
@@ -325,7 +325,7 @@
     
 //     // Change code above this line
 //   }
-//   includes([1, 2, 3, 4, 5], 3) 
+//   includes([1, 2, 3, 4, 5], 3)
 //   includes(['Earth', 'Mars', 'Venus', 'Jupiter', 'Saturn'], 'Jupiter')
 //   includes(['apple', 'plum', 'pear', 'orange'], 'kiwi')
 
@@ -466,7 +466,7 @@
 // const  filterArray = (numbers, value) => {
 //     const filteredNumbers = [];
   
-//     numbers.forEach(number => 
+//     numbers.forEach(number =>
 //     { if(number > value) {
 //             filteredNumbers.push(number)
 //           }
@@ -481,4 +481,204 @@
 //   filterArray([1, 2, 3, 4, 5], 3)
 
 // ==============================================
+
+// const students = [
+//     { name: "Манго", score: 83 },
+//     { name: "Полі", score: 59 },
+//     { name: "Аякс", score: 37 },
+//     { name: "Ківі", score: 94 },
+//     { name: "Х'юстон", score: 64 },
+//   ];
+  
+//   const names = students.map(student => student.name);
+//   console.log(names);// ['Манго', 'Полі', 'Аякс', 'Ківі', 'Х'юстон']
+
+//   const scores = students.map(student => student.score);
+//   console.log(scores)
+
+//   const uptadetStudent = students.map(student =>({
+//         ...student,
+//         score: student.score + 10
+//     })
+
+//   )
+//   console.table(uptadetStudent)
+
+//   const namesA = 'Манго';
+
+//   const studentToUptadet = students.map(student => {
+//     if(namesA === student.name){
+//         return `this is`;
+//     }
+//     return  `this is not`;
+
+//   })
+
+//   const studentToUptadet = students.map(student => {
+// return namesA === student.name ?
+// `this is ${namesA}`
+// :student.name;
+//   })
+
+// const studentToUptadet = students.map(student => namesA === student.name
+//     ?`this is ${namesA}`
+//     :student.name,
+//     );
+
+//   console.table(studentToUptadet)
+
+// =============================================================
+
+// const values = [51, -3, 27, 21, -68, 42, -37];
+
+// const positivValues = values.filter(value => value > 5)
+// console.log(positivValues)
+
+// const LOW_SCORE = 50;
+// const HIGH_SCORE = 80;
+// const students = [
+//   { name: "Манго", score: 83 },
+//   { name: "Полі", score: 59 },
+//   { name: "Аякс", score: 37 },
+//   { name: "Ківі", score: 94 },
+//   { name: "Х'юстон", score: 64 },
+// ];
+
+// const filter = students.filter(
+//     ({score}) => {
+//     return score > 40})
+// console.log(filter)
+
+// ==============================================================
+
+// const colorPickerOptions = [
+//   { label: "red", color: "#F44336" },
+//   { label: "green", color: "#4CAF50" },
+//   { label: "blue", color: "#2196F3" },
+//   { label: "pink", color: "#E91E63" },
+//   { label: "indigo", color: "#3F51B5" },
+// ];
+
+// // const colorFind = colorPickerOptions.find(({label}) => label === 'red' )
+// // console.log(colorFind)
+
+// const colorFind = colorPickerOptions.findIndex(({ label }) => label === 'white')
+// console.log(colorFind)
+
+
+// ================================================================
+
+// const total = [2, 7, 3, 14, 6].reduce((previousValue, number) => {
+//   return previousValue + number;
+// });
+
+// console.log(total); // 32
+
+// const tweets = [
+//   { id: "000", likes: 5, tags: ["js", "nodejs"] },
+//   { id: "001", likes: 2, tags: ["html", "css"] },
+//   { id: "002", likes: 17, tags: ["html", "js", "nodejs"] },
+//   { id: "003", likes: 8, tags: ["css", "react"] },
+//   { id: "004", likes: 0, tags: ["js", "nodejs", "react"] },
+// ];
+
+// const totalLike = tweets.reduce((total, tweet) =>
+//   total + tweet.likes, 0);
+//   // console.log(totalLike);
+
+// const totalTags = tweets.reduce((AllTags, tweet) => {
+//   AllTags.push(...tweet.tags);
+
+//   return AllTags
+// }, [])
+  
+// console.log(totalTags);
+
+
+// ---------------------------------------------------------
+  
+// const tagStatus = totalTags.reduce((acc, tag) => {
+// console.log(tag);
+// console.log(acc);
+
+
+//   if (acc[tag]) {
+//     acc[tag] += 1;
+
+//     return acc;
+//   }
+
+//   acc[tag] = 1;
+
+//   return acc;
+// }, {})
+// ----------------------------------------------------------
+
+// const tagStatus = totalTags.reduce((acc, tag) => {
+//   console.log(acc);
+
+  
+//   return {
+//     ...acc,
+//     [tag]: acc[tag]
+//       ? acc[tag] += 1
+//       : 1
+//   }
+//     }, {})
+  
+
+
+// console.log(tagStatus);
+
+// -------------------------------------------------------------
+
+// const tweets = [
+//   { id: "000", likes: 5, tags: ["js", "nodejs"] },
+//   { id: "001", likes: 2, tags: ["html", "css"] },
+//   { id: "002", likes: 17, tags: ["html", "js", "nodejs"] },
+//   { id: "003", likes: 8, tags: ["css", "react"] },
+//   { id: "004", likes: 0, tags: ["js", "nodejs", "react"] },
+// ];
+
+// const getTags = tweets =>
+//   tweets.reduce((acc, tweet) => {
+//     acc.push(...tweet.tags);
+
+//     return acc;
+//   }, []);
+
+// const tags = getTags(tweets);
+
+// // Винесемо callback-функцію окремо, а в reducе передамо посилання на неї.
+// // Це стандартна практика, якщо callback-функція досить велика.
+
+// // Якщо в об'єкті-акумуляторі acc відсутня своя властивість з ключем tag,
+// // то створюємо її і записуємо їй значення 0.
+// // В іншому випадку збільшуємо значення на 1.
+// const getTagStats = (acc, tag) => {
+//   // if (!acc.hasOwnProperty(tag)) {
+//   //   acc[tag] = 0;
+//   // }
+
+//   // acc[tag] += 1;
+
+//   // return acc;
+
+//   return {
+//     // ...acc,
+//     // [tag]: acc[tag]
+//     //   ? acc[tag] += 1
+//     //   : 0
+//     ...acc,
+//     [tag]: acc[tag]
+//       ? acc[tag] += 1
+//       : 1
+//   }
+// };
+
+// // Початкове значення акумулятора - це порожній об'єкт {}
+// const countTags = tags => tags.reduce(getTagStats, {});
+
+// const tagCount = countTags(tags);
+// console.log(tagCount);
 
