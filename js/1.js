@@ -886,22 +886,14 @@ const users = [
   }
 ]
 
-const getTotalBalanceByGender = (users, gender) => {
-     const A = users.map(user => user.gender)
-        // .reduce((allman, el) => {
-        //     if (el.includes(gender)) {
-        //         allman.push(el)
+// const getTotalBalanceByGender = (users, gender) => users
+//     .filter(user => user.gender === gender)
+//     .reduce((total, user) =>
+// total + user.balance
+//     , 0)
 
-        //         return allman
-                
-        //     }
-        // },[])
-        
-    return A
-};
-            console.log(A)
 
-// console.log(getTotalBalanceByGender(users))
+console.log(getTotalBalanceByGender(users , 'male'))
 
 
 // -----------------------------------------------------------
