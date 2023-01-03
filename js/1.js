@@ -893,7 +893,7 @@ const users = [
 //     , 0)
 
 
-console.log(getTotalBalanceByGender(users , 'male'))
+// console.log(getTotalBalanceByGender(users , 'male'))
 
 
 // -----------------------------------------------------------
