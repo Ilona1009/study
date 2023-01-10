@@ -1143,3 +1143,65 @@ const users = [
 
 // =======================================================
 
+// let ivan = { name: "Іван", age: 25 };
+// let petro = { name: "Петро", age: 30 };
+// let mariya = { name: "Марія", age: 28 };
+
+// // let names = [];
+// // names.push(ivan.name, petro.name, mariya.name)
+
+// -------------------------------------------------------
+
+
+// let usersA = [
+//   { name: "Іван", age: 25 },
+//   { name: "Петро", age: 30 },
+//   { name: "Марія", age: 28 },
+// ];
+
+// let names = usersA.map(item => item.name);
+
+// console.log( names );
+
+// ================================================
+
+// let students = [
+//   { name: "Іван", surname: "Іванко", age: 25 },
+//   { name: "Петро",surname: "Петренко", age: 30 },
+//   { name: "Марія",surname: "Мрійко", age: 28 },
+// ];
+
+// const usersMapped = students.map(student => ({
+//       userFullName: `${student.name} ${student.surname}`,
+//       age: student.age
+// }))
+    
+// console.table( usersMapped );
+
+// ===============================================
+
+
+// let students = [
+//   { name: "Іван", surname: "Іванко", age: 25 },
+//   { name: "Петро",surname: "Петренко", age: 30 },
+//   { name: "Марія",surname: "Мрійко", age: 28 },
+// ];
+
+// const sortByAge = [...students].sort((a, b) => a.age - b.age)
+
+// console.table(sortByAge);
+
+// ===========================================================
+
+// let students = [
+//   { name: "Іван", surname: "Іванко", age: 25 },
+//   { name: "Петро",surname: "Петренко", age: 30 },
+//   { name: "Марія",surname: "Мрійко", age: 28 },
+// ];
+
+// const getAverageAge = arr => arr.reduce((acc, student) => {
+//   return acc + student.age
+// }, 0) / students.length
+
+// console.log(getAverageAge(students));
+
