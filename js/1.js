@@ -1077,3 +1077,69 @@ const users = [
 //     .sort((a, b) => a.localeCompare(b))
 
 //     console.table(names2)
+
+// ========================================================
+
+// const arr = [1, 2, 3, 4, 5]
+// let arrSum = [];
+// const getSumm = arr.reduce((acc, el, i) => {
+//     //             console.log(acc)
+//     // console.log(el)
+//     //             console.log(arrSum)
+
+
+//     return arrSum[i] = acc + el
+// }, 0);
+//             console.log(arrSum)
+
+// // const arr = [1,2,3,4,5];
+// // const arrSum = [];
+// // const arrLength = arr.reduce((start, value, index) => {
+// // return arrSum[index] = start + value;
+// // },0);
+
+// // console.log(arrSum)
+
+// ===============================================
+
+// const camelize = str =>
+//   str.split('-')
+//     // .map((word, index) => index ? word.toUpperCase() : word)
+
+
+//     .map((el, i) => {
+//       if (i !== 0) {
+//         return (el[0].toUpperCase() + el.slice(1))
+//       } else
+//         return el
+//     })
+      
+  
+//   .join('')
+
+
+// console.log(camelize( 'my-short-string'))
+
+// ========================================================
+
+// let arr = [5, 3, 8, 15, 43,52];
+// const filterRange = (array, a, b) =>
+//   array.filter(numb => (a <= numb && numb <= b))
+
+//   console.log(filterRange(arr, 9, 22))
+
+// =======================================================
+
+// function copySorted(arr) {
+//   return [...arr].sort((a,b) => a.localeCompare(b));
+// }
+
+// let arr = ["HTML", "JavaScript", "CSS"];
+
+// let sorted = copySorted(arr);
+
+// console.log( sorted );
+// // console.log( arr );
+
+// =======================================================
+
