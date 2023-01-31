@@ -1308,47 +1308,163 @@
 
 // ========================================================
 
-class Storage { 
-  constructor( items ) {
-    this.items = items;
-  }
+// class Storage {
+//   constructor( items ) {
+//     this.items = items;
+//   }
 
-  getItems(){
-    return this.items;
-  }
+//   getItems(){
+//     return this.items;
+//   }
 
-  addItem(newItem){
-    this.items.push(newItem)
-    return;
-  }
+//   addItem(newItem){
+//     this.items.push(newItem)
+//     return;
+//   }
 
-  removeItem(itemToRemove){
-    this.items.indexOf(itemToRemove);
-      this.items.splice(1, 1);
-    return ;
+//   removeItem(itemToRemove){
+//     this.items.indexOf(itemToRemove);
+//       this.items.splice(1, 1);
+//     return ;
 
-  }
-}
+//   }
+// }
 
   
 
 
-// Change code above this line
-const storage = new Storage(["Nanitoids", "Prolonger", "Antigravitator"]);
-console.log(storage)
-console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
-storage.addItem("Droid");
-console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
-storage.removeItem("Prolonger");
-console.log(storage.removeItem("Prolonger"))
-console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
+// // Change code above this line
+// const storage = new Storage(["Nanitoids", "Prolonger", "Antigravitator"]);
+// console.log(storage)
+// console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
+// storage.addItem("Droid");
+// console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
+// storage.removeItem("Prolonger");
+// console.log(storage.removeItem("Prolonger"))
+// console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
 
 
-var myFish = ['angel', 'clown', 'drum', 'mandarin', 'sturgeon'];
- myFish.splice(3, 1);
+// var myFish = ['angel', 'clown', 'drum', 'mandarin', 'sturgeon'];
+//  myFish.splice(3, 1);
 
-console.log(myFish)
+// console.log(myFish)
 
 
-// myFish равен ["angel", "clown", "trumpet", "sturgeon"]
-// removed равен ["drum"]
+// // myFish равен ["angel", "clown", "trumpet", "sturgeon"]
+// // removed равен ["drum"]
+
+
+// ==========================================================
+
+// class StringBuilder {
+//   constructor(initialValue ) {
+//     this.initialValue = initialValue;
+//   }
+
+//   getValue(){
+//     return this.initialValue;
+//   }
+
+//   padStart(str) {
+//     return this.initialValue = str + this.initialValue;
+//   }
+
+//   padEnd(str) {
+//     return this.initialValue = this.initialValue + str;
+//   }
+
+//   padBoth(str) {
+//     return this.initialValue = str + this.initialValue + str;
+//   }
+// }
+
+
+// // Change code above this line
+// const builder = new StringBuilder(".");
+// console.log(builder.getValue()); // "."
+// builder.padStart("^");
+// console.log(builder.getValue()); // "^."
+// builder.padEnd("^");
+// console.log(builder.getValue()); // "^.^"
+// builder.padBoth("=");
+// console.log(builder.getValue()); // "=^.^="
+
+// ==========================================================
+
+// class Car {
+//   static #MAX_PRICE = 50000;
+//   // Change code below this linet
+
+//   static checkPrice(price){
+//     return price > Car.#MAX_PRICE
+//       ? "Error! Price exceeds the maximum"
+//       : "Success! Price is within acceptable limits"
+//   }
+
+//   // Change code above this line
+//   constructor({ price }) {
+//     this.price = price;
+//   }
+// }
+
+// const audi = new Car({ price: 36000 });
+// const bmw = new Car({ price: 64000 });
+
+// console.log(Car.checkPrice(audi.price)); // "Success! Price is within acceptable limits"
+// console.log(Car.checkPrice(bmw.price)); // "Error! Price exceeds the maximum"
+
+// ============================================================
+
+class User {
+  email;
+
+  constructor(email) {
+    this.email = email;
+  }
+
+  get email() {
+    return this.email;
+  }
+
+  set email(newEmail) {
+    this.email = newEmail;
+  }
+}
+class Admin extends User {
+  // Change code below this line
+
+  static AccessLevel = {
+    BASIC: "basic",
+    SUPERUSER: "superuser",
+  };
+
+  constructor({ email, accessLevel }) {
+    super(email);
+    this.accessLevel = accessLevel;
+  }
+
+  // Change code above this line
+
+  blacklistedEmails = [];
+
+  blacklist(email){
+    return this.blacklistedEmails.push(email);
+  }
+
+  isBlacklisted(email){
+    return this.blacklistedEmails.includes(email);
+  }
+}
+
+const mango = new Admin({
+  email: "mango@mail.com",
+  accessLevel: Admin.AccessLevel.SUPERUSER,
+});
+
+console.log(mango.email); // "mango@mail.com"
+console.log(mango.accessLevel); // "superuser"
+
+mango.blacklist("poly@mail.com");
+console.log(mango.blacklistedEmails); // ["poly@mail.com"]
+console.log(mango.isBlacklisted("mango@mail.com")); // false
+console.log(mango.isBlacklisted("poly@mail.com")); // true
