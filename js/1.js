@@ -1415,56 +1415,24 @@
 
 // ============================================================
 
-class User {
-  email;
 
-  constructor(email) {
-    this.email = email;
-  }
+let count = 0;
 
-  get email() {
-    return this.email;
-  }
+function cc(card) {
+  // Змініть код лише під цим рядком
+if (card <= 6){
+  count += 1;
+  console.log(count)
 
-  set email(newEmail) {
-    this.email = newEmail;
-  }
 }
-class Admin extends User {
-  // Change code below this line
+else if(card >= '10' ){
+  count -1;
+    console.log(count)
 
-  static AccessLevel = {
-    BASIC: "basic",
-    SUPERUSER: "superuser",
-  };
-
-  constructor({ email, accessLevel }) {
-    super(email);
-    this.accessLevel = accessLevel;
-  }
-
-  // Change code above this line
-
-  blacklistedEmails = [];
-
-  blacklist(email){
-    return this.blacklistedEmails.push(email);
-  }
-
-  isBlacklisted(email){
-    return this.blacklistedEmails.includes(email);
-  }
 }
 
-const mango = new Admin({
-  email: "mango@mail.com",
-  accessLevel: Admin.AccessLevel.SUPERUSER,
-});
+  console.log(count + (count > 0 ? ' Bet' : ' Hold'));
+  // Змініть код лише над цим рядком
+}
 
-console.log(mango.email); // "mango@mail.com"
-console.log(mango.accessLevel); // "superuser"
-
-mango.blacklist("poly@mail.com");
-console.log(mango.blacklistedEmails); // ["poly@mail.com"]
-console.log(mango.isBlacklisted("mango@mail.com")); // false
-console.log(mango.isBlacklisted("poly@mail.com")); // true
+cc(2); cc(3); cc(7); cc('K'); cc('A');
